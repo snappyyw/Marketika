@@ -1,0 +1,181 @@
+@import 'normalize.scss';
+
+//                                  MIXMIN
+
+@mixin  font-lato {
+    font-family: 'Lato', sans-serif;
+}
+@mixin fotn-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+//                                VARIABLES
+$color-white: #ffffff;
+//                                COMMON
+*{
+    box-sizing: border-box;
+}
+body{
+    @include font-lato;
+    color: #414141;
+}
+
+.description-item{
+    &-icon{
+        margin-bottom: 20px;
+    }
+    &-title{
+        margin-bottom: 14px;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: bold;
+    }
+    &-content{
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 300;
+    }
+}
+
+.section-outer{}
+
+.section-inner{
+    width: 1180px;
+    margin: 0 auto;
+}
+
+//                              HEADER
+
+.section-header{
+    color: $color-white;
+    background: url('../img/showcase.png') no-repeat 50% 50%;
+    background-size: cover;
+    position: relative;
+
+.section-inner{
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(20,39, 41,.6);
+        z-index: 5;
+    }
+    &-logo{
+        padding-top: 35px;
+        font-weight: bold;
+        font-size: 24px;
+        flex-shrink: 1;
+    }
+    &-content{
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+    &-wrapper{
+        margin: 0 auto;
+        &-title,
+        &-subtitle{
+            text-align: center;
+        }
+
+        &-title{
+            font-weight: bold;
+            font-size: 56px;
+            line-height: 60px;
+            margin-bottom: 16px;
+        }
+        &-subtitle{
+            @include fotn-montserrat;
+            font-size: 18px;
+            line-height: 32px;
+            width: 80%;
+            margin: 0 auto 44px;
+        }
+        &-from{
+            display: flex;
+            &-input{
+                flex: 1;
+                padding-right: 40px;
+                input{
+                    @include fotn-montserrat;
+                    border: none;
+                    background: rgba(255,255,255,.25);
+                    color: $color-white;
+                    font-size: 16px;
+                    margin: 0;
+                    padding: 16px 20px;
+                    outline: none;
+                    border-radius: 4px;
+                    width: 100%;
+                    &::placeholder{
+                        color: $color-white;
+                    }
+                }
+            }
+            &-button{
+                button{
+                    @include fotn-montserrat;
+                    margin: 0;
+                    padding: 16px 20px;
+                    font-size: 18px;
+                    border: none;
+                    background: linear-gradient(to right, #FE985B,#FE4FA7);
+                    outline: none;
+                    border-radius: 4px;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+
+//                          PROMO
+
+.section-promo{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.section-promo-1{
+    display: flex;
+    &-content,&-video{
+        flex-basis: 50%;
+    }
+    &-content{
+        padding-right: 90px;
+        .title{
+            font-size: 32px;
+            line-height: 51px;
+            font-weight: bold;
+            padding-bottom: 56px;
+        }
+        .description-item{
+            margin-top: 28px;
+        }
+    }
+    &-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.section-promo-2{
+    display: flex;
+    padding-top: 86px;
+    margin-top: 120px;
+    border-top: 1px solid #e2e2e2;
+    text-align: center;
+    .description-item + .description-item{
+        margin-left: 40px;
+    }
+    
+}
